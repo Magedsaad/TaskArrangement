@@ -1,0 +1,25 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:padding="@dimen/widget_margin">
+
+<TextView
+    android:layout_marginTop="25dp"
+    android:id="@+id/TasksFromWidgetId"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true"
+    android:textColor="#000"
+    />
+    <TextView
+        android:layout_marginTop="25dp"
+        android:id="@+id/TasksDscWidgetId"
+        android:layout_below="@+id/TasksFromWidgetId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000"
+        />
+
+
+</RelativeLayout>

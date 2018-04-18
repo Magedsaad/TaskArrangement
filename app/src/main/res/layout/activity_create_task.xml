@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.trying.developing.taskarrangement.ui.CreateTaskActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <LinearLayout
+        android:id="@+id/line1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/MemberEmailIdTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Member Email:"
+            android:fontFamily="serif"
+            android:textSize="17dp"
+            android:textColor="#000"
+            android:layout_margin="15dp"
+            android:layout_weight="1"
+
+            />
+        <EditText
+            android:id="@+id/MemberEmailid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/MemberEmailIdTextView"
+            android:ems="10"
+            android:hint="Enter Member Email"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="3"
+            android:layout_marginTop="15dp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/line2"
+        android:layout_below="@+id/line1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/TaskNameTextViewID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Task Name:"
+            android:fontFamily="serif"
+            android:textSize="17dp"
+            android:textColor="#000"
+            android:layout_margin="15dp"
+            android:layout_weight="1"
+
+            />
+        <EditText
+            android:id="@+id/TaskNameId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/TaskNameTextViewID"
+            android:ems="10"
+            android:hint="Enter task name"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="3"
+            android:layout_marginTop="15dp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/line3"
+        android:layout_below="@+id/line2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/TaskDscTextviewId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Task Description:"
+            android:fontFamily="serif"
+            android:textSize="17dp"
+            android:textColor="#000"
+            android:layout_margin="15dp"
+            android:layout_weight="1"
+
+            />
+        <EditText
+            android:id="@+id/TaskDscid"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:layout_toRightOf="@+id/TaskDscTextviewId"
+            android:ems="10"
+            android:hint="Task Description"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="3"
+            android:layout_marginTop="15dp"
+            android:inputType="text|textMultiLine"
+            />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/lin4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:orientation="vertical"
+        >
+    <Button
+        android:id="@+id/createTaskButtonid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/line3"
+        android:layout_marginTop="25dp"
+        android:text="Assign Task"
+        android:onClick="assignTask"
+
+        />
+    </LinearLayout>
+</LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

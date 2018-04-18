@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.trying.developing.taskarrangement.ui.CreateAccountActivity">
+
+    <EditText
+        android:layout_marginTop="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:id="@+id/EmailId"
+        android:hint="Enter Your Email"/>
+    <EditText
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/EmailId"
+        android:hint="Enter Your Password"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/PasswordId"/>
+    <EditText
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/PasswordId"
+        android:hint="Enter Your Age"
+
+        android:ems="10"
+        android:id="@+id/AgeId"/>
+
+    <RadioGroup
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/AgeId"
+        android:weightSum="2"
+        android:id="@+id/radioGroup"
+        >
+
+        <RadioButton
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:text="Team Leader"
+            android:id="@+id/selectLeaderTypeRadioButtonId"
+            android:checked="true"
+            android:textSize="15dp" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Team Member"
+            android:id="@+id/selectMemberTypeRadioButtonId"
+            android:checked="false"
+            android:textSize="15dp"
+
+            />
+
+    </RadioGroup>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/radioGroup"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:text="Create Account"
+        android:onClick="signup"
+
+        />
+
+</RelativeLayout>
