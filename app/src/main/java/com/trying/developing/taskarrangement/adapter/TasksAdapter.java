@@ -1,5 +1,7 @@
 package com.trying.developing.taskarrangement.adapter;
 
+import android.appwidget.AppWidgetManager;
+import android.content.ComponentName;
 import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Context;
@@ -18,10 +20,14 @@ import com.trying.developing.taskarrangement.R;
 import com.trying.developing.taskarrangement.model.Tasks;
 import com.trying.developing.taskarrangement.model.contentprovider.TaskContract;
 import com.trying.developing.taskarrangement.ui.AllTasksActivity;
+import com.trying.developing.taskarrangement.ui.AppWidget;
 import com.trying.developing.taskarrangement.ui.TasksDetailsActivity;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 /**
  * Created by developing on 4/18/2018.
@@ -62,13 +68,16 @@ public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.TasksViewHol
 
     public class TasksViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView tasksFrom;
-        private TextView tasksName;
+        @BindView(R.id.tasksFromlistid)
+        TextView tasksFrom;
+        @BindView(R.id.tasksNamelistid)
+        TextView tasksName;
 
         public TasksViewHolder(View itemView) {
             super(itemView);
-            tasksFrom = (TextView) itemView.findViewById(R.id.tasksFromlistid);
-            tasksName = (TextView) itemView.findViewById(R.id.tasksNamelistid);
+
+            ButterKnife.bind(this,itemView);
+
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -103,6 +112,7 @@ public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.TasksViewHol
             bundle.putSerializable("choosenTask", tasks);
             intent.putExtras(bundle);
             mContext.startActivity(intent);
+
 
 
             return null;

@@ -21,12 +21,17 @@ import com.google.firebase.database.ValueEventListener;
 import com.trying.developing.taskarrangement.R;
 import com.trying.developing.taskarrangement.model.Tasks;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class CreateTaskActivity extends AppCompatActivity {
 
-
-    private EditText memberEmail;
-    private EditText tasksName;
-    private EditText taskDescription;
+    @BindView(R.id.MemberEmailid)
+     EditText memberEmail;
+    @BindView(R.id.TaskNameId)
+     EditText tasksName;
+    @BindView(R.id.TaskDscid)
+     EditText taskDescription;
     private DatabaseReference mTasksDatabase;
     private DatabaseReference mUserDatabase;
     private FirebaseUser user;
@@ -36,9 +41,12 @@ public class CreateTaskActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_task);
-        memberEmail=(EditText) findViewById(R.id.MemberEmailid);
-        tasksName=(EditText) findViewById(R.id.TaskNameId);
-        taskDescription=(EditText) findViewById(R.id.TaskDscid);
+
+        setTitle("Assign Task");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        ButterKnife.bind(this);
 
         mAuth = FirebaseAuth.getInstance();
         user = mAuth.getCurrentUser();

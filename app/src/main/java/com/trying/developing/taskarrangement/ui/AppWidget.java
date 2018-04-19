@@ -1,11 +1,14 @@
 package com.trying.developing.taskarrangement.ui;
 
+import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.ContentResolver;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
+import android.util.Log;
 import android.widget.RemoteViews;
 
 import com.trying.developing.taskarrangement.R;
@@ -20,6 +23,7 @@ public class AppWidget extends AppWidgetProvider {
     static void updateAppWidget(Context context, AppWidgetManager appWidgetManager,
                                 int appWidgetId) {
 
+        Log.i("tag","update");
         CharSequence widgetText = context.getString(R.string.appwidget_text);
         // Construct the RemoteViews object
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.app_widget);
@@ -35,15 +39,14 @@ public class AppWidget extends AppWidgetProvider {
             tasks.setLeaderEmail(tasksCursor.getString(tasksCursor.getColumnIndex(TaskContract.TaskEntry.COLUMN_Task_TEAM_LEADER)));
             tasks.setTaskDsc(tasksCursor.getString(tasksCursor.getColumnIndex(TaskContract.TaskEntry.COLUMN_Task_Description)));
             tasks.setMemberEmail(tasksCursor.getString(tasksCursor.getColumnIndex(TaskContract.TaskEntry.COLUMN_Task_Member)));
+            Log.e("taaaag",tasks.getTaskName());
             tasksCursor.close();
-
         }
 
         if(tasks !=null){
 
             views.setTextViewText(R.id.TasksFromWidgetId, tasks.getLeaderEmail());
             views.setTextViewText(R.id.TasksDscWidgetId, tasks.getTaskDsc());
-
 
         }
         // Instruct the widget manager to update the widget

@@ -71,6 +71,7 @@ public class TaskContentProvider extends ContentProvider {
         Uri returnUri;
         switch (match) {
             case TASKS:
+                delete(uri,null,null);
                 long id = db.insert(TaskContract.TaskEntry.TABLE_NAME, null, contentValues);
                 if (id > 0) {
                     returnUri = ContentUris.withAppendedId(TaskContract.TaskEntry.CONTENT_URI, id);
@@ -104,7 +105,7 @@ public class TaskContentProvider extends ContentProvider {
         if (rowDeleted != 0) {
             getContext().getContentResolver().notifyChange(uri, null);
         }
-        db.close();
+
         return rowDeleted;
     }
 

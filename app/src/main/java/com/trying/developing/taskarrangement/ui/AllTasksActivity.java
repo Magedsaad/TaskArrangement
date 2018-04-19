@@ -39,7 +39,15 @@ public class AllTasksActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_all_tasks);
+
+        setTitle("Tasks List");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
         mAuth = FirebaseAuth.getInstance();
+
+
+
         fab=(FloatingActionButton) findViewById(R.id.fabTasksId);
 
         recyclerView=(RecyclerView) findViewById(R.id.RecyclerView);

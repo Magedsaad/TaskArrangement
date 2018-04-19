@@ -16,13 +16,19 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.trying.developing.taskarrangement.R;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class SignInActivity extends AppCompatActivity {
 
 
     private FirebaseAuth mAuth;
 
-    private EditText emailLogin;
-    private EditText passwordLogin;
+
+    @BindView(R.id.emailLogin)
+     EditText emailLogin;
+    @BindView(R.id.passwordLogin)
+     EditText passwordLogin;
     private String mEmail;
     private String mPassword;
 
@@ -32,9 +38,11 @@ public class SignInActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
 
-        emailLogin=(EditText) findViewById(R.id.emailLogin);
-        passwordLogin=(EditText) findViewById(R.id.passwordLogin);
+        setTitle("Sign in");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
+        ButterKnife.bind(this);
         mAuth = FirebaseAuth.getInstance();
 
     }
@@ -51,7 +59,7 @@ public class SignInActivity extends AppCompatActivity {
                     Intent intent=new Intent(SignInActivity.this,AllTasksActivity.class);
                     startActivity(intent);
 
-                }else {
+                }else{
                     // If sign in fails, display a message to the user.
 
                     Toast.makeText(SignInActivity.this, "Authentication failed.",

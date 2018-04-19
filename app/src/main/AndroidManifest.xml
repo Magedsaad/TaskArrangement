@@ -16,11 +16,26 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.CreateAccountActivity" />
-        <activity android:name=".ui.SignInActivity" />
-        <activity android:name=".ui.CreateTaskActivity" />
-        <activity android:name=".ui.AllTasksActivity" />
-        <activity android:name=".ui.TasksDetailsActivity" />
+        <activity android:name=".ui.CreateAccountActivity"
+            android:parentActivityName=".ui.MainActivity"
+            android:launchMode="singleTop"
+            />
+        <activity android:name=".ui.SignInActivity"
+            android:parentActivityName=".ui.MainActivity"
+            android:launchMode="singleTop"
+            />
+        <activity android:name=".ui.CreateTaskActivity"
+            android:parentActivityName=".ui.MainActivity"
+            android:launchMode="singleTop"
+            />
+        <activity android:name=".ui.AllTasksActivity"
+            android:parentActivityName=".ui.MainActivity"
+            android:launchMode="singleTop"
+            />
+        <activity android:name=".ui.TasksDetailsActivity"
+            android:parentActivityName=".ui.MainActivity"
+            android:launchMode="singleTop"
+            />
 
         <provider
             android:name=".model.contentprovider.TaskContentProvider"

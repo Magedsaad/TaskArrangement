@@ -21,13 +21,20 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.trying.developing.taskarrangement.R;
 import com.trying.developing.taskarrangement.model.Users;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class CreateAccountActivity extends AppCompatActivity {
 
-    private TextView userEmail;
-    private TextView userPassword;
-    private TextView userAge;
-    private RadioGroup radioGroup;
-    private RadioButton radioButton;
+    @BindView(R.id.EmailId)
+     TextView userEmail;
+    @BindView(R.id.PasswordId)
+     TextView userPassword;
+    @BindView(R.id.AgeId)
+     TextView userAge;
+    @BindView(R.id.radioGroup)
+     RadioGroup radioGroup;
+     RadioButton radioButton;
     private DatabaseReference mDatabase;
     private FirebaseAuth mAuth;
 
@@ -35,11 +42,13 @@ public class CreateAccountActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_account);
+
+        setTitle("Create Account");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        ButterKnife.bind(this);
         mAuth = FirebaseAuth.getInstance();
-        userEmail=(TextView) findViewById(R.id.EmailId);
-        userPassword=(TextView) findViewById(R.id.PasswordId);
-        userAge=(TextView) findViewById(R.id.AgeId);
-        radioGroup=(RadioGroup) findViewById(R.id.radioGroup);
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
     }
