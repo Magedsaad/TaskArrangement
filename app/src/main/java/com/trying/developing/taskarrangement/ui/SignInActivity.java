@@ -40,8 +40,7 @@ public class SignInActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sign_in);
 
         setTitle(getString(R.string.Signin));
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
 
         ButterKnife.bind(this);
         mAuth = FirebaseAuth.getInstance();

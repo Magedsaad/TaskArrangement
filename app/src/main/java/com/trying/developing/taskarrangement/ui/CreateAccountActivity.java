@@ -45,8 +45,7 @@ public class CreateAccountActivity extends AppCompatActivity {
         setContentView(R.layout.activity_create_account);
 
         setTitle(getString(R.string.CreateAccount));
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
 
         ButterKnife.bind(this);
         mAuth = FirebaseAuth.getInstance();

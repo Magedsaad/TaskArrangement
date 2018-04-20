@@ -17,15 +17,13 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.CreateAccountActivity"
-            android:parentActivityName=".ui.MainActivity"
-            android:launchMode="singleTop"
+
             />
         <activity android:name=".ui.SignInActivity"
-            android:parentActivityName=".ui.MainActivity"
-            android:launchMode="singleTop"
+
             />
         <activity android:name=".ui.CreateTaskActivity"
-            android:parentActivityName=".ui.MainActivity"
+            android:parentActivityName=".ui.AllTasksActivity"
             android:launchMode="singleTop"
             />
         <activity android:name=".ui.AllTasksActivity"
