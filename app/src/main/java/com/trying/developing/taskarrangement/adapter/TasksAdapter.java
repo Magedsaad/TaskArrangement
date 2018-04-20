@@ -55,8 +55,9 @@ public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.TasksViewHol
     public void onBindViewHolder(TasksViewHolder holder, int position) {
 
         Tasks tasks = data.get(position);
-        holder.tasksFrom.setText("From: " + tasks.getLeaderEmail());
-        holder.tasksName.setText("TaskName: " + tasks.getTaskName());
+
+        holder.tasksFrom.setText(mContext.getString(R.string.tasksFrom)+ tasks.getLeaderEmail());
+        holder.tasksName.setText(mContext.getString(R.string.taskName)+ tasks.getTaskName());
 
 
     }

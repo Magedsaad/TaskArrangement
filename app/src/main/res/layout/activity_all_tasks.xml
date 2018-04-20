@@ -22,6 +22,8 @@
         android:visibility="invisible"
         android:id="@+id/fabTasksId"
         android:elevation="6dp"
+        android:contentDescription="@string/listDesc"
+
         />
 
 

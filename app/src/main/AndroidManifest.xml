@@ -33,7 +33,7 @@
             android:launchMode="singleTop"
             />
         <activity android:name=".ui.TasksDetailsActivity"
-            android:parentActivityName=".ui.MainActivity"
+            android:parentActivityName=".ui.AllTasksActivity"
             android:launchMode="singleTop"
             />
 

@@ -13,13 +13,14 @@
         android:src="@drawable/tasks"
         android:layout_marginTop="50dp"
         android:layout_centerHorizontal="true"
+        android:contentDescription="@string/ImageDesc"
         />
 
  <Button
      android:id="@+id/signin"
      android:layout_width="wrap_content"
      android:layout_height="wrap_content"
-     android:text="I Already have Account"
+     android:text="@string/Mainbut1"
      android:layout_centerHorizontal="true"
      android:layout_centerVertical="true"
      android:onClick="signin"
@@ -28,7 +29,7 @@
         android:id="@+id/signup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Create Account"
+        android:text="@string/Mainbut2"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:layout_below="@+id/signin"

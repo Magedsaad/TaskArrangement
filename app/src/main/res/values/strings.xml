@@ -2,4 +2,26 @@
     <string name="app_name">TaskArrangement</string>
     <string name="appwidget_text">EXAMPLE</string>
     <string name="add_widget">Add widget</string>
+    <string name="ImageDesc">this is image for slogo</string>
+    <string name="listDesc">this fab display for only teamleader</string>
+    <string name="hintEmail">Enter your Email</string>
+    <string name="hintPassword">Enter your password</string>
+    <string name="hintAge">Enter your Age</string>
+    <string name="groupLeader">Team Leader</string>
+    <string name="groupMember">Team Member</string>
+    <string name="butCreateAccount">Create Account</string>
+    <string name="memberEmail">Member Email</string>
+    <string name="createTaskEmail">Enter Member Email</string>
+    <string name="createTaskName">Task Name:</string>
+    <string name="createhintTaskName">Enter task name</string>
+    <string name="createTaskDesc">Task Description</string>
+    <string name="createTaskDeschint">Task Description</string>
+    <string name="butAssigntask">Assign Task</string>
+    <string name="Mainbut1">I Already have Account</string>
+    <string name="Mainbut2">Create Account</string>
+    <string name="hintsigninEmail">Enter your Email</string>
+    <string name="hintsigninPassword">Enter your Password</string>
+    <string name="butsignin">Sign in</string>
+    <string name="tasksFrom">Tasks From:</string>
+    <string name="taskName">Tasks Name:</string>
 </resources>

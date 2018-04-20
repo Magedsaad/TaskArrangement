@@ -5,14 +5,14 @@ android {
         config {
             keyAlias 'maged'
             keyPassword 'password'
-            storeFile file('E:/courses/firebase/TaskArrangement/keystore.jks')
+            storeFile file("$rootDir/keystore.jks")
             storePassword 'password'
         }
     }
     compileSdkVersion 26
     defaultConfig {
         applicationId "com.trying.developing.taskarrangement"
-        minSdkVersion 14
+        minSdkVersion 16
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"

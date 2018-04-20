@@ -29,15 +29,15 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:id="@+id/emailLogin"
-        android:hint="Enter your Email"
-
+        android:hint="@string/hintsigninEmail"
+        android:inputType="textEmailAddress"
         />
     <EditText
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Enter your Password"
+        android:hint="@string/hintsigninPassword"
         android:id="@+id/passwordLogin"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
@@ -53,7 +53,7 @@
         android:onClick="login"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:text="Sign in"
+        android:text="@string/butsignin"
         />
 
     </LinearLayout>

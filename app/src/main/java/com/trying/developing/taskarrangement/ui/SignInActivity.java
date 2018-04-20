@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -47,31 +48,38 @@ public class SignInActivity extends AppCompatActivity {
 
     }
 
-    public void login(View view){
-        mEmail=emailLogin.getText().toString();
-        mPassword=passwordLogin.getText().toString();
+    public void login(View view) {
+        mEmail = emailLogin.getText().toString();
+        mPassword = passwordLogin.getText().toString();
 
-        mAuth.signInWithEmailAndPassword(mEmail,mPassword).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if(task.isSuccessful()){
+        if (TextUtils.isEmpty(mEmail) || TextUtils.isEmpty(mPassword)) {
 
-                    Intent intent=new Intent(SignInActivity.this,AllTasksActivity.class);
-                    startActivity(intent);
+            Toast.makeText(this, "Fields are empty", Toast.LENGTH_SHORT).show();
 
-                }else{
-                    // If sign in fails, display a message to the user.
+        } else {
 
-                    Toast.makeText(SignInActivity.this, "Authentication failed.",
-                            Toast.LENGTH_SHORT).show();
+            mAuth.signInWithEmailAndPassword(mEmail, mPassword).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if (task.isSuccessful()) {
+
+                        Intent intent = new Intent(SignInActivity.this, AllTasksActivity.class);
+                        startActivity(intent);
+
+                    } else {
+                        // If sign in fails, display a message to the user.
+
+                        Toast.makeText(SignInActivity.this, "Authentication failed.",
+                                Toast.LENGTH_SHORT).show();
+
+                    }
 
                 }
+            });
 
-            }
-        });
+
+        }
 
 
     }
-
-
 }
