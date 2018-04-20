@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -41,8 +43,6 @@ public class AllTasksActivity extends AppCompatActivity {
         setContentView(R.layout.activity_all_tasks);
 
         setTitle(getString(R.string.TasksTitle));
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -136,6 +136,29 @@ public class AllTasksActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+         super.onCreateOptionsMenu(menu);
+
+         getMenuInflater().inflate(R.menu.menu,menu);
+         return true;
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+         super.onOptionsItemSelected(item);
+         if(item.getItemId()==R.id.logoutBut){
+
+             FirebaseAuth.getInstance().signOut();
+             Intent intent=new Intent(this,MainActivity.class);
+             startActivity(intent);
+             finish();
+
+         }
+         return true;
     }
 
 }

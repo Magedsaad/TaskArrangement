@@ -31,4 +31,6 @@
     <string name="MainActiviy">Main Activity</string>
     <string name="Signin">SignIn</string>
     <string name="TasksDetails">Tasks Details</string>
+    <string name="Logout">Logout</string>
+    <string name="Auth">Authontication Field</string>
 </resources>
