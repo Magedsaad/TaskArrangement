@@ -30,7 +30,7 @@ public class TasksDetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_tasks_details);
 
 
-        setTitle("Tasks Details");
+        setTitle(getString(R.string.TasksDetails));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 

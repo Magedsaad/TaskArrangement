@@ -44,7 +44,7 @@ public class CreateAccountActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_account);
 
-        setTitle("Create Account");
+        setTitle(getString(R.string.CreateAccount));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
@@ -65,7 +65,7 @@ public class CreateAccountActivity extends AppCompatActivity {
 
         if (TextUtils.isEmpty(emailAddress) || TextUtils.isEmpty(emailPassword)) {
 
-            Toast.makeText(this, "Fields are empty", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,getString(R.string.validate), Toast.LENGTH_SHORT).show();
 
         } else {
 

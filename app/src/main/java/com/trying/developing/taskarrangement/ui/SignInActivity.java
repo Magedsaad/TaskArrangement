@@ -39,7 +39,7 @@ public class SignInActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
 
-        setTitle("Sign in");
+        setTitle(getString(R.string.Signin));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
@@ -54,7 +54,7 @@ public class SignInActivity extends AppCompatActivity {
 
         if (TextUtils.isEmpty(mEmail) || TextUtils.isEmpty(mPassword)) {
 
-            Toast.makeText(this, "Fields are empty", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.validate), Toast.LENGTH_SHORT).show();
 
         } else {
 

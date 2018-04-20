@@ -24,4 +24,11 @@
     <string name="butsignin">Sign in</string>
     <string name="tasksFrom">Tasks From:</string>
     <string name="taskName">Tasks Name:</string>
+    <string name="TasksTitle">Tasks list</string>
+    <string name="CreateAccount">Create Account</string>
+    <string name="validate">Fields are empty</string>
+    <string name="CreateTask">Task Assigns</string>
+    <string name="MainActiviy">Main Activity</string>
+    <string name="Signin">SignIn</string>
+    <string name="TasksDetails">Tasks Details</string>
 </resources>
