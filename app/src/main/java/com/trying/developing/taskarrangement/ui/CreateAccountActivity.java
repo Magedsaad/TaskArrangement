@@ -28,14 +28,14 @@ import butterknife.ButterKnife;
 public class CreateAccountActivity extends AppCompatActivity {
 
     @BindView(R.id.EmailId)
-     TextView userEmail;
+    TextView userEmail;
     @BindView(R.id.PasswordId)
-     TextView userPassword;
+    TextView userPassword;
     @BindView(R.id.AgeId)
-     TextView userAge;
+    TextView userAge;
     @BindView(R.id.radioGroup)
-     RadioGroup radioGroup;
-     RadioButton radioButton;
+    RadioGroup radioGroup;
+    RadioButton radioButton;
     private DatabaseReference mDatabase;
     private FirebaseAuth mAuth;
 
@@ -64,7 +64,7 @@ public class CreateAccountActivity extends AppCompatActivity {
 
         if (TextUtils.isEmpty(emailAddress) || TextUtils.isEmpty(emailPassword)) {
 
-            Toast.makeText(this,getString(R.string.validate), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.validate), Toast.LENGTH_SHORT).show();
 
         } else {
 
@@ -74,17 +74,13 @@ public class CreateAccountActivity extends AppCompatActivity {
                     if (task.isSuccessful()) {
                         FirebaseUser user = mAuth.getCurrentUser();
                         writeNewUser(user.getUid(), emailAddress, emailPassword, positionlevel, emailAge);
-
                         Intent intent = new Intent(CreateAccountActivity.this, MainActivity.class);
                         startActivity(intent);
-
                         finish();
                     } else {
                         // If sign in fails, display a message to the user.
-
-                        Toast.makeText(CreateAccountActivity.this,  getString(R.string.Auth),
+                        Toast.makeText(CreateAccountActivity.this, getString(R.string.Auth),
                                 Toast.LENGTH_SHORT).show();
-
                     }
                 }
 
@@ -93,8 +89,8 @@ public class CreateAccountActivity extends AppCompatActivity {
         }
     }
 
-    private void writeNewUser(String userId,String email,String password,String position,String age) {
-        Users user = new Users(email,password,position,age);
+    private void writeNewUser(String userId, String email, String password, String position, String age) {
+        Users user = new Users(email, password, position, age, userId);
 
         mDatabase.child("users").child(userId).setValue(user);
     }

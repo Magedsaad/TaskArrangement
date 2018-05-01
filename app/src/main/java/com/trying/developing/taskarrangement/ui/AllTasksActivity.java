@@ -157,6 +157,10 @@ public class AllTasksActivity extends AppCompatActivity {
              startActivity(intent);
              finish();
 
+         }else if(item.getItemId()==R.id.allusers){
+             Intent intent=new Intent(this,list_all_contacts.class);
+             startActivity(intent);
+
          }
          return true;
     }

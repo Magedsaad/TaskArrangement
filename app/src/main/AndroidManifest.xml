@@ -16,22 +16,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.CreateAccountActivity"
-
-            />
-        <activity android:name=".ui.SignInActivity"
-
-            />
-        <activity android:name=".ui.CreateTaskActivity"
-            android:parentActivityName=".ui.AllTasksActivity"
+        <activity android:name=".ui.CreateAccountActivity" />
+        <activity android:name=".ui.SignInActivity" />
+        <activity
+            android:name=".ui.CreateTaskActivity"
             android:launchMode="singleTop"
-            />
-        <activity android:name=".ui.AllTasksActivity"
-            />
-        <activity android:name=".ui.TasksDetailsActivity"
-            android:parentActivityName=".ui.AllTasksActivity"
+            android:parentActivityName=".ui.AllTasksActivity" />
+        <activity android:name=".ui.AllTasksActivity" />
+        <activity
+            android:name=".ui.TasksDetailsActivity"
             android:launchMode="singleTop"
-            />
+            android:parentActivityName=".ui.AllTasksActivity" />
 
         <provider
             android:name=".model.contentprovider.TaskContentProvider"
@@ -47,6 +42,13 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/app_widget_info" />
         </receiver>
+
+        <activity android:name=".ui.list_all_contacts" />
+        <activity android:name=".ui.ChattingActivity"
+            android:launchMode="singleTop"
+            android:parentActivityName=".ui.list_all_contacts"
+
+            />
     </application>
 
 </manifest>

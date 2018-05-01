@@ -33,11 +33,11 @@ import butterknife.ButterKnife;
 public class CreateTaskActivity extends AppCompatActivity {
 
     @BindView(R.id.MemberEmailid)
-     EditText memberEmail;
+    EditText memberEmail;
     @BindView(R.id.TaskNameId)
-     EditText tasksName;
+    EditText tasksName;
     @BindView(R.id.TaskDscid)
-     EditText taskDescription;
+    EditText taskDescription;
     private DatabaseReference mTasksDatabase;
     private DatabaseReference mUserDatabase;
     private FirebaseUser user;
@@ -62,11 +62,11 @@ public class CreateTaskActivity extends AppCompatActivity {
 
     }
 
-    public void assignTask(View view){
-        final String mMemberEmail =memberEmail.getText().toString();
-        final String mTasksName =tasksName.getText().toString();
-        final String mTaskDsc=taskDescription.getText().toString();
-        final String tasksFrom=user.getEmail();
+    public void assignTask(View view) {
+        final String mMemberEmail = memberEmail.getText().toString();
+        final String mTasksName = tasksName.getText().toString();
+        final String mTaskDsc = taskDescription.getText().toString();
+        final String tasksFrom = user.getEmail();
 
         final Query userQuery = mUserDatabase.orderByChild("email").equalTo(memberEmail.getText().toString());
 
@@ -83,7 +83,7 @@ public class CreateTaskActivity extends AppCompatActivity {
                     user = mAuth.getCurrentUser();
 
                     final String current_id = user.getUid();
-                    final Tasks tasks=new Tasks(tasksFrom,id,mMemberEmail,mTasksName,mTaskDsc);
+                    final Tasks tasks = new Tasks(tasksFrom, id, mMemberEmail, mTasksName, mTaskDsc);
 
                     mTasksDatabase.child("tasks").child(current_id).push().setValue(tasks).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
@@ -91,11 +91,11 @@ public class CreateTaskActivity extends AppCompatActivity {
 
                             mAuth = FirebaseAuth.getInstance();
                             user = mAuth.getCurrentUser();
-                            Tasks tasks=new Tasks(tasksFrom,id,mMemberEmail,mTasksName,mTaskDsc);
+                            Tasks tasks = new Tasks(tasksFrom, id, mMemberEmail, mTasksName, mTaskDsc);
                             String id = child.getKey();
                             mTasksDatabase.child("tasks").child(id).push().setValue(tasks);
 
-                            Intent intent=new Intent(CreateTaskActivity.this,TasksDetailsActivity.class);
+                            Intent intent = new Intent(CreateTaskActivity.this, TasksDetailsActivity.class);
                             Bundle bundle = new Bundle();
                             bundle.putSerializable("choosenTask", tasks);
                             intent.putExtras(bundle);

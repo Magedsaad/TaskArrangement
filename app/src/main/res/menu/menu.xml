@@ -4,4 +4,8 @@
     android:id="@+id/logoutBut"
     android:title="@string/Logout"
     />
+    <item
+        android:id="@+id/allusers"
+        android:title="All users"
+        />
 </menu>

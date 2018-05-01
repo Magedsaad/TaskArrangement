@@ -11,15 +11,21 @@ public class Users implements Serializable {
     private String password;
     private String positionLevel;
     private String age;
+    private String id;
 
     public Users() {
     }
 
-    public Users(String email, String password, String positionLevel, String age) {
+    public Users(String email, String password, String positionLevel, String age, String id) {
         this.email = email;
         this.password = password;
         this.positionLevel = positionLevel;
         this.age = age;
+        this.id = id;
+    }
+
+    public String getId() {
+        return id;
     }
 
     public String getEmail() {
