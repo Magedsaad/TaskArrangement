@@ -8,7 +8,7 @@
         android:layout_height="wrap_content"
         android:text="Messages"
         android:textAppearance="?android:attr/textAppearanceLarge"
-
+        android:id="@+id/messagesTextView"
         />
 
 </RelativeLayout>
